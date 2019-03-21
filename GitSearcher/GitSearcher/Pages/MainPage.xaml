@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="GitSearcher.Pages.MainPage"  
+             BackgroundImage="Resources/background.png"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Content>
+
+            <StackLayout Orientation="Vertical" Padding="30" Spacing="45" VerticalOptions="CenterAndExpand" >
+
+                <Image x:Name ="Welcome_text_main" Source="Resources/text1.png"/>
+            <ImageButton x:Name ="Empire_button" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="1000" Source="Resources/icon.jpg" BackgroundColor="Transparent" Command="{Binding OpenOtherPageCommand}"/>
+                <Label x:Name ="Welcome_text_secondary" Text="CLICK OUR PROUD EMBLEM TO SEARCH FOR REBELS" TextColor="#FFFFFF" FontSize = "10"  HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>  
