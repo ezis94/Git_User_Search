@@ -15,12 +15,14 @@ namespace GitSearcher.ViewModels
         public Action DisplayInvalidLoginPrompt;
         public ICommand OpenOtherPageCommand { get; set; }
         public INavigation Navigation { get; set; } 
-
+       // public Image Welcome_text_main { get; set; }
         public EmpireViewModel(INavigation input )
         {
             Navigation = input;
             OpenOtherPageCommand = new Command(async () => await GotoPage2());
+
         }
+        
         public async Task GotoPage2()
         {
             await Navigation.PushAsync(new SearchPage());

@@ -77,7 +77,6 @@ namespace GitSearcher.ViewModels
         public SearcherViewModel()
         {
             SubmitCommand = new Command(OnSubmit);
-            goToURL = new Command<string>(OnSpecific);
         }
         public void OnSubmit()
         {
@@ -87,13 +86,6 @@ namespace GitSearcher.ViewModels
             });
             OnPropertyChanged();
         }
-        public void OnSpecific(string value)
-        {
-           // Console.WriteLine("----------------------"+ value);
-            Device.OpenUri(new Uri(value));
-            OnPropertyChanged();
-
-
-        }
+        
     }
    }
