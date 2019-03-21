@@ -15,11 +15,11 @@ namespace GitSearcher.Pages
         {
             
             InitializeComponent();
+            
             BindingContext = new ViewModels.EmpireViewModel(Navigation);
             
         }
 
-       
-       
+      
     }
 }
