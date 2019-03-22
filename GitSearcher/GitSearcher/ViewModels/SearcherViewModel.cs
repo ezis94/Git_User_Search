@@ -63,6 +63,7 @@ namespace GitSearcher.ViewModels
             {
                 IsBusy = true; 
                 UserModel = await _gitServices.GetGitDetails(query);
+                Console.WriteLine("---------------"+UserModel.items.Count);
             }
             finally
             {

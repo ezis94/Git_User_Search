@@ -13,6 +13,7 @@ namespace GitSearcher.Handler
         public async Task<UserModel> GetGitDetails(string query)
         {
             var getUserDetails = await _GitRest.GetAllUsers(query);
+
             return getUserDetails;
         }
     }
