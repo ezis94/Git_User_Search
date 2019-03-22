@@ -15,7 +15,8 @@ namespace GitSearcher.GitRestClient
 
         public async Task<T> GetAllUsers(string query)
         {
-            var json = await _httpClient.GetStringAsync(OpenWeatherApi + query+ "&page=4&per_page=10");
+            //Potentially a page numerator can be created and all of the responses can be retrieved in the app
+            var json = await _httpClient.GetStringAsync(OpenWeatherApi + query + "&per_page=100");
             var getWeatherModels = JsonConvert.DeserializeObject<T>(json);
             return getWeatherModels;
         }
