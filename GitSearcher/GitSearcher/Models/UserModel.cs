@@ -7,7 +7,7 @@ using Xamarin.Forms;
 namespace GitSearcher.Models
 {
    
-    public class Item
+    public class Item 
     {
         public int Total_count { get; set; }
 

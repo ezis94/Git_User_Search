@@ -72,8 +72,18 @@ namespace GitSearcher.ViewModels
 
 
         public ICommand SubmitCommand { protected set; get; }
-        public ICommand goToURL { protected set; get; }
+        public ICommand ItemClickCommand
+        {
+            get
+            {
+                return new Command((item) =>
+                {
+                    Models.Item txc = (Item)item;
 
+                    Device.OpenUri(new Uri(txc.url));
+                });
+            }
+        }
         public SearcherViewModel()
         {
             SubmitCommand = new Command(OnSubmit);
@@ -86,6 +96,6 @@ namespace GitSearcher.ViewModels
             });
             OnPropertyChanged();
         }
-        
+      
     }
    }

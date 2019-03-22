@@ -4,6 +4,7 @@
              x:Class="GitSearcher.Pages.SearchPage"  
              BackgroundImage="Resources/background.png"
              xmlns:gitVm="clr-namespace:GitSearcher.ViewModels"
+             xmlns:local="clr-namespace:GitSearcher.Behaviours"
              NavigationPage.HasNavigationBar="false">
     
         <ContentPage.BindingContext>
@@ -16,21 +17,22 @@
 
             <Entry x:Name="Query" Text="{Binding Query}" Placeholder="Enter your suspicion" PlaceholderColor="White" TextColor=" White" HorizontalOptions="FillAndExpand"/>
 
-            <Button x:Name="Search" Command="{Binding SubmitCommand}" Text="Search!" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Search"  Command="{Binding SubmitCommand}" Text="Search!" HorizontalOptions="FillAndExpand"/>
 
             </StackLayout>
 
             <ActivityIndicator  IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy,Mode=TwoWay}"/>
-        <ListView x:Name="myListView" ItemsSource="{Binding UserModel.items}" >
-                <ListView.ItemTemplate>
+        <local:ClickableListView x:Name="myListView"  ItemsSource="{Binding UserModel.items}" ItemClickCommand="{Binding ItemClickCommand}" >
+            
+            <local:ClickableListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell
-                            Text="{Binding name}" TextColor="White" DetailColor="Wheat" Tapped="Git_user_Tapped"  Detail="{Binding url}" CommandParameter="{Binding url}"  x:Name="Git_user" >
-                            
+                            Text="{Binding name}" TextColor="White" DetailColor="Wheat"  Detail="{Binding url}" CommandParameter="{Binding url}"  x:Name="Git_user" >
+                        
                     </TextCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </local:ClickableListView.ItemTemplate>
+            </local:ClickableListView>
 
 
         </StackLayout>

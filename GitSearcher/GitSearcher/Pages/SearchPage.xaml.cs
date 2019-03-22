@@ -23,11 +23,6 @@ namespace GitSearcher.Pages
             };
 
         }
-
-        private void Git_user_Tapped(object sender, EventArgs e)
-        {
-            TextCell txc = (TextCell)sender;
-            Device.OpenUri(new Uri(txc.Detail));
-        }
+        
     }
 }

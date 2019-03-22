@@ -23,14 +23,14 @@ namespace GitSearcher.Pages {
         private global::Xamarin.Forms.Button Search;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView myListView;
+        private global::GitSearcher.Behaviours.ClickableListView myListView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SearchPage));
             Query = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "Query");
             Search = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Search");
-            myListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "myListView");
+            myListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::GitSearcher.Behaviours.ClickableListView>(this, "myListView");
         }
     }
 }
