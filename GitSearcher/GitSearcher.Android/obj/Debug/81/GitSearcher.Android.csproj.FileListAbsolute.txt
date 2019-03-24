@@ -110,4 +110,6 @@ C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher.Android\obj\Debu
 C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher\bin\Debug\netstandard2.0\GitSearcher.dll
+C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher.Android\bin\Debug\GitSearcher.dll.mdb
 C:\Users\Edgar\source\repos\GitSearcher\GitSearcher\GitSearcher.Android\obj\Debug\81\linksrc\GitSearcher.dll.mdb
