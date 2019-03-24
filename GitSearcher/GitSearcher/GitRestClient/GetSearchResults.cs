@@ -26,7 +26,6 @@ namespace GitSearcher.GitRestClient
             using (var reader = new StreamReader(stream))
             using (var json = new JsonTextReader(reader))
             {
-                Console.WriteLine("///////////////////////"+json);
                 return _serializer.Deserialize<T>(json);
             }
             
