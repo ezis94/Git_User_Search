@@ -15,8 +15,6 @@ namespace GitSearcher.Pages
             var vm = new SearcherViewModel();
             this.BindingContext = vm;
             InitializeComponent();
-
-           
             Query.Completed += (object sender, EventArgs e) =>
             {
                 Search.Command.Execute(null);

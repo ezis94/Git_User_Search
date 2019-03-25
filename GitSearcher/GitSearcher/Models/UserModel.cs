@@ -6,7 +6,10 @@ using Xamarin.Forms;
 
 namespace GitSearcher.Models
 {
-   
+
+   //The model that represents the object created from Git response
+
+
     public class Item 
     {
         public int Total_count { get; set; }

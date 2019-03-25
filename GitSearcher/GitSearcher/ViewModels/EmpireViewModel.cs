@@ -12,20 +12,20 @@ namespace GitSearcher.ViewModels
     {
        
 
-        public Action DisplayInvalidLoginPrompt;
         public ICommand OpenOtherPageCommand { get; set; }
         public INavigation Navigation { get; set; } 
-       // public Image Welcome_text_main { get; set; }
+       // Constructor
         public EmpireViewModel(INavigation input )
         {
             Navigation = input;
-            OpenOtherPageCommand = new Command(async () => await GotoPage2());
+            OpenOtherPageCommand = new Command(async () => await GotoSearchPage());
 
         }
-        
-        public async Task GotoPage2()
+        //Handler of button press
+        public async Task GotoSearchPage()
         {
-            await Navigation.PushAsync(new SearchPage());
+            
+            await Navigation.PushModalAsync(new SearchPage(), true);
         }
     }
 }

@@ -11,10 +11,10 @@ namespace GitSearcher.ViewModels
 {
     public class SearcherViewModel : INotifyPropertyChanged
     {
+        //Git variable
         GitServices _gitServices = new GitServices();
-        private UserModel _userModel;  
+        //The object for response storage
 
-        public Action DisplayInvalidLoginPrompt;
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -22,7 +22,8 @@ namespace GitSearcher.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-
+        //The object for response storage
+        private UserModel _userModel;
         public UserModel UserModel
         {
             get { return _userModel; }
@@ -33,6 +34,7 @@ namespace GitSearcher.ViewModels
             }
         }
 
+        //The search query for Git API
         private string query;
         public string Query
         {
@@ -40,11 +42,13 @@ namespace GitSearcher.ViewModels
             set
             {
                 query = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Query"));
+                OnPropertyChanged();
 
 
             }
         }
+        //The loading animation handler
+
         private bool _isBusy;   // for showing loader when the task is initializing
         public bool IsBusy
         {
@@ -56,22 +60,24 @@ namespace GitSearcher.ViewModels
             }
         }
 
-
-        private async Task InitializeGetUsersAsync()
+        //The caller to Git API
+        public async Task InitializeGetUsersAsync()
         {
             try
             {
                 IsBusy = true; 
-                UserModel = await _gitServices.GetGitDetails(query);
+                UserModel = await _gitServices.GetGitDetails(Query);
+
             }
             finally
             {
-                IsBusy = false;
+               IsBusy = false;
             }
         }
 
-
+        //The Command executed upon search
         public ICommand SubmitCommand { protected set; get; }
+        //Opening of each Git in Browser
         public ICommand ItemClickCommand
         {
             get
@@ -79,15 +85,16 @@ namespace GitSearcher.ViewModels
                 return new Command((item) =>
                 {
                     Models.Item txc = (Item)item;
-
                     Device.OpenUri(new Uri(txc.url));
                 });
             }
         }
+        //Constructor
         public SearcherViewModel()
         {
             SubmitCommand = new Command(OnSubmit);
         }
+        //Search query submit event
         public void OnSubmit()
         {
 
